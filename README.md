@@ -6,5 +6,13 @@ In my case, when fuzzing the antivirus (Windows Defender), I specified the targe
 So I developed SeedSeeker and analyzed most of the files I use (files with almost every extension you can imagine, plus malware, etc.) as analysis seeds, and when I got the results, I saw that exe files compressed using Packer and .7z had more than double the coverage than other files.
 After fuzzing with 10 seed files carefully selected by SeedSeeker, we were able to get 2.3 times more edges than the original seeds in the same amount of time.
 
-#TODO
-Rather than just considering the number of basic blocks, I am further developing to consider the code size within a basic block.
+# TODO
+1. Rather than just considering the number of basic blocks, I am further developing to consider the code size within a basic block.
+2. adjust Coverage Dump and Validate Path via command arguments
+3. etc..
+
+# How-To-Use
+In dynamic_rio_path(in code), write the path to your own drrun.exe file.
+In run_process_command, specify the executable command line of the process for which you want to measure coverage. The @@ stands for a file path, which will be replaced with the path to the Seed you want to measure.
+Example) Harness.exe -f @@, where @@ is replaced with the Seed file whose coverage you want to measure.
+The Coverage Dump file is created in C:\CoverageDump and the Seed to measure coverage can be placed in C:\CoverageValidate.(You can change it on code)
