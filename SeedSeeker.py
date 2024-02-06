@@ -127,5 +127,5 @@ def Check_cov_per_file(modulename,covfilepath):
 
 
 
-#make_cov_file("C:\\CoverageDump","C:\\CoverageValidate")
+make_cov_file("C:\\CoverageDump","C:\\CoverageValidate")
 Check_cov_per_file("mpengine.dll", "C:\\CoverageDump")
