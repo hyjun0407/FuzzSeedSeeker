@@ -13,6 +13,12 @@ After fuzzing with 10 seed files carefully selected by SeedSeeker, we were able 
 
 # How-To-Use
 In dynamic_rio_path(in code), write the path to your own drrun.exe file.
+
 In run_process_command, specify the executable command line of the process for which you want to measure coverage. The @@ stands for a file path, which will be replaced with the path to the Seed you want to measure.
 Example) Harness.exe -f @@, where @@ is replaced with the Seed file whose coverage you want to measure.
+
 The Coverage Dump file is created in C:\CoverageDump and the Seed to measure coverage can be placed in C:\CoverageValidate.(You can change it on code)
+
+You Can Easily change target-module that you want to check coverage,
+Check_cov_per_file("mpengine.dll", "C:\\CoverageDump")
+"mpengine.dll" to other.
